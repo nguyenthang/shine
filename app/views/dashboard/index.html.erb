@@ -1,0 +1,4 @@
+<h1>Welcome to Dashboard</h1>
+<h2>Current User is: <%= current_user.email %></h2>
+<h2><%= link_to "Logout", destroy_user_session_path, method:  :delete %> </h2>
+<p> You are using Rails <%= Rails.version %> </p>
