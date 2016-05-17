@@ -46,3 +46,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # install gem devise to handle login shine system
 gem 'devise'
 gem 'bower-rails'
+gem 'faker'

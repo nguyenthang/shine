@@ -1,23 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Shine</title>
+  <title> <%= title(yield(:title)) %> </title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
+  <%= render 'layouts/shared/shim' %>
 </head>
-<body class="container">
-  <% if alert.present? %>
-    <aside class="alert alert-danger">
-      <%= alert %>
-    </aside>
-  <% end %>
-  <% if notice.present? %>
-    <aside class="alert alert-warning">
-      <%= notice %>
-    </aside>
-  <% end %>
-<%= yield %>
+<body>
+  <navigation>
+    <%= render 'layouts/shared/nav' %>
+  </navigation>
+  <div class="container">
+    <% if alert.present? %>
+        <aside class="alert alert-danger">
+          <%= alert %>
+        </aside>
+    <% end %>
+    <% if notice.present? %>
+        <aside class="alert alert-warning">
+          <%= notice %>
+        </aside>
+    <% end %>
 
+    <%= yield %>
+  </div>
+
+
+<%= render 'layouts/shared/footer' %>
 </body>
 </html>
